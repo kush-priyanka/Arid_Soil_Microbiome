@@ -37,18 +37,18 @@ plot(az.raster)
 plot(az.raster, main="Aridity Index across state of Arizona")
 
 #Adding gps points to the map specific to sampling sites
-long= c(-114.19719, -114.19702,-114.19688, -113.92182,-113.92168, -113.92156, -114.20373,-114.20385,-114.20398,-114.30820, -114.30834,-114.30848, -111.010655, -111.010507,-111.010539,-111.010507,-111.010517, -111.010517) 
-lat= c(33.37897,33.37893,33.37885, 33.72123, 33.72122,  33.72123, 33.75071,33.75074, 33.75073,34.05758,34.05754,34.05753, 32.223600,32.223384,32.223374,32.223438,32.223429,32.223447)
+long= c(-114.19702, -113.92156,-114.20385,-114.30834,-112.074036, -111.651299,-110.911789) 
+lat= c(33.37893,33.72123,33.75074,34.05754, 33.448376, 35.198284, 32.253460)
 df<-as.data.frame(cbind(long, lat))
 
 ##Plot the graph and save it as a pdf 
 pdf("AZmap_AI_02.20.2020.pdf", width=8)
 plot(az.raster, main="Aridity Index across state of Arizona",axes=FALSE,box=FALSE, legend=T)
 #Add symbols with site locations on it
-points(df, pch=17, cex=1, col="black")
+points(df, pch=17, cex=0.8, col="black")
 #Add sites name
-name2=c("QZ1", "QZ1", "QZ1", "QZ2", "QZ2", "QZ2", "QZ3","QZ3", "QZ3", "QZ4", "QZ4", "QZ4", "TH", "TH", "TH", "TH", "TH", "TH")
-text(df,name2,cex=0.5, pos=3, offset=0.4)
+name2=c("1 Quartzsite", "2", "3", "4 Parker", "Phoenix", "Flagstaff", "Tucson")
+text(df,name2,cex=0.5, pos=3.5, offset=0.4)
 dev.off()
 
 
