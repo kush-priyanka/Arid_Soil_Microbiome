@@ -8,7 +8,7 @@ BiocManager::install("DESeq2")
 library(DESeq2)
 
 #Import bacterial/archaeal or fungal ASV table and metadata file
-bac.asv <- read.table("F:/Sonoran Desert Microbiome/otu_table_wTax_dada2_16S.txt", sep = "\t", header = T, row.names=1)
+bac.asv <- read.table("F:/Sonoran Desert Microbiome/asv_table_wTax_dada2_16S.txt", sep = "\t", header = T, row.names=1)
 metadata.deseq<-read.table("F:/Sonoran Desert Microbiome/Mapping.File.Richness_16S.txt", sep = "\t", header = T, row.names=1)
 
 #Remove samples not related to the project
