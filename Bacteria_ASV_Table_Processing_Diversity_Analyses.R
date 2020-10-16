@@ -71,6 +71,7 @@ bac.asv<-bac.asv[,-grep("Mitochondria", bac.tax.table$Family)]
 bac.tax.table<-bac.tax.table[-grep("Mitochondria", bac.tax.table$Family),]
 dim(bac.asv)
 dim(bac.tax.table) 
+
 #Remove Eukaryota from ASV and taxonomy table
 bac.asv<-bac.asv[,-grep("Eukaryota", bac.tax.table$Kingdom)]
 bac.tax.table<-bac.tax.table[-grep("Eukaryota", bac.tax.table$Kingdom),]
@@ -203,14 +204,14 @@ dev.off()
 #Perform PERMANOVA to test community similarity differences
 adonis(bac.dist~map$Geolocation/map$Microsite, strata=map$Geolocation)
 
-#Calculate beta-dispersivity
-bac.dispersion<-betadisper(bac.dist, group=metadata.deseq$Microsite,type = "centroid")
+#Calculate Beta-dispersivity
+bac.dispersion<-betadisper(bac.dist, group=map$Microsite,type = "centroid")
 #Check Average distance to centroid values
 bac.dispersion
 #Test whether the beta-dispersivity across Microsite is different
 permutest(bac.dispersion)
 
-#Plot the distance to cetroid values
+#Plot the distance to centroid values
 pdf("Bac_betadispersion_microsite_centroid.pdf", width=8)
 boxplot(bac.dispersion, xlab="Microsite", ylab="Distance to centroid",
         col=c("Canopy" = "#9AC801", "Gap" = "#3552C5"))
