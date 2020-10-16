@@ -156,7 +156,7 @@ dev.off()
 #Perform PERMANOVA to test community similarity differences
 adonis(fungi.dist~map$Geolocation/map$Microsite, strata=map$Geolocation)
 
-#Calculate beta-dispersivity
+#Calculate Beta-dispersivity
 fungi.dispersion<-betadisper(fungi.dist, group=map$Microsite,type = "centroid")
 #Check Average distance to centroid values
 fungi.dispersion
