@@ -1,4 +1,9 @@
 ####dada2####
+install.packages("dada")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install("dada2", version = "3.10")
+
 library(dada2)
 packageVersion("dada2") #confirm that DADA2 version is 1.6 or later
 
@@ -94,8 +99,7 @@ View(track)
 
 #ASSIGN TAXONOMY - dada gives the option of using RDP, greengeens, or Silva as the database for assigning taxonomy
 #IMPORTANT - go to this site https://benjjneb.github.io/dada2/training.html and download the training set
-#and place it in the same working directory 'path' before starting the command. For now just use the silva set.
-#NOTE: Provide the full/absolute path to the Tax file otherwise you will get an error.
+#Place it in the same working directory 'path' before starting the command. 
 taxa <- assignTaxonomy(seqtab.nochim, "/F:/Sonoran Desert Microbiome/Downloads/silva_nr_v132_train_set.fa.gz", multithread=TRUE)
 
 #SPECIES ASSIGNMENT -available for silva and RDP
