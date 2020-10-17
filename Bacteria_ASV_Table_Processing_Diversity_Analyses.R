@@ -19,8 +19,8 @@ setwd("/F:/Sonoran Desert Microbiome")
 
 #If continuing analyses from dada2 analyses, then use the following variables
 #seqtab.nochim (ASV table)
+#taxa (Taxonomy table)
 
-#taxa (Taxonomic table)
 #Else upload the files from your desktop
 bac.asv<-read.table('All_Seqs_asv_dada.txt', sep='\t', header=T, row.names=1)
 bac.tax.table<-read.table('All_Seqs_silva.txt', sep='\t', header=T, row.names=1)
