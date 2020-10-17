@@ -2,7 +2,8 @@
 -R scripts for the manuscript titled: "Arid Ecosystem Vegetation Canopy-Gap Dichotomy: Influence on Soil Microbial Composition and Nutrient Cycling Functional Potential"\
 \
 -The R scripts include all the amplicon sequencing processing and diversity analyses together with statisitcal analyses\
-- Files Bacteria_dada2_Sequence_Processing.R & Fungi_dada2_Sequence_Processing.R= Sequence processing to genrate ASV and taxonomy tables\
+\
+-Files Bacteria_dada2_Sequence_Processing.R & Fungi_dada2_Sequence_Processing.R= Sequence processing to genrate ASV and taxonomy tables\
 \
 -Files Bacteria_ASV_table_Processing_Analyses.R & Fungi_ASV_table_Processing_Analyses=  Removal of contmaination from ASV table, diversity analyses, community similarity statistical test, FUNGuild analyses for fungal guilds\
 \
