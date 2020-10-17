@@ -1,4 +1,7 @@
 ####dada2####
+#Follow the dada2 pipeline 
+#https://benjjneb.github.io/dada2/tutorial_1_8.html
+
 install.packages("dada")
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
@@ -6,9 +9,6 @@ BiocManager::install("dada2", version = "3.10")
 
 library(dada2)
 packageVersion("dada2") #confirm that DADA2 version is 1.6 or later
-
-#Follow the dada2 pipeline 
-#https://benjjneb.github.io/dada2/tutorial_1_8.html
 
 path <- "/F:/Sonoran Desert Microbiome/Downloads/idemp-master/demultiplexed/"
 
@@ -75,7 +75,7 @@ dadaFs[[1]]
 mergers <- mergePairs(dadaFs, derepFs, dadaRs, derepRs, verbose=TRUE)
 head(mergers[1])
 
-#Create sequence ('ASV') read table
+#Create sequence (ASV) table
 seqtab <- makeSequenceTable(mergers)
 dim(seqtab)
 table(nchar(getSequences(seqtab)))
@@ -114,7 +114,7 @@ head(taxa.print)
 View(taxa.print)
 
 #Export ASV and taxonomy tables
-setwd("/F:/Sonoran Desert Microbiome/Results")
+setwd("/F:/Sonoran Desert Microbiome/Bacteria")
 write.table(taxa, "All_Seqs_silva.txt", sep="\t", quote=F, row.names=T, col.names=NA)
 write.table(seqtab.nochim, "All_Seqs_asv_dada.txt", sep="\t", quote=F, row.names=T, col.names=NA)
 saveRDS(seqtab.nochim, "All_Seqs_asv_dada.rds")

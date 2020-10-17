@@ -15,7 +15,7 @@ library(reshape)
 library(metagenomeSeq) #for ASV table normalization
 
 #Set working directory to the folder where your data files are
-setwd("/F:/Sonoran Desert Microbiome")
+setwd("/F:/Sonoran Desert Microbiome/Bacteria")
 
 #If continuing analyses from dada2 analyses, then use the following variables
 #seqtab.nochim (ASV table)

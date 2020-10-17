@@ -4,14 +4,15 @@ library(ggplot2) #for visualization and plotting
 library(metagenomeSeq) #for normalization
 
 #set working directory
-setwd("/F:/Sonoran Desert Microbiome")
+setwd("/F:/Sonoran Desert Microbiome/ITS")
 #If continuing analyses from dada2 analyses, then use the following variables
 #seqtab.nochim (ASV table)
 #taxa (Taxonomic table)
 
 #Else upload the files from your desktop
-fungi.asv<-read.table('All_Seqs_asv_dada1.10.txt', sep='\t', header=T, row.names=1)
+fungi.asv<-read.table('All_Seqs_asv_dada.txt', sep='\t', header=T, row.names=1)
 fungi.tax.table<-read.table('All_Seqs_unite.txt', sep='\t', header=T, row.names=1)
+
 #Check the dimensions of your file
 #Regular check can help with catching errors
 dim(fungi.asv) 
@@ -93,7 +94,7 @@ fungi.tax.table<-fungi.tax.table[colnames(fungi.asv),]
 #Create table with ASV and taxonomic information
 fungi.asv.tax<-cbind(t(fungi.asv), fungi.tax.table)
 
-#write.table(fungi.asv.tax, file="ITS_asv_table_wTax_dada2_1.10.txt", sep="\t", quote=F, row.names=T, col.names=NA)
+#write.table(fungi.asv.tax, file="ITS_asv_table_wTax_dada2.txt", sep="\t", quote=F, row.names=T, col.names=NA)
 
 #check number of sequences per sample
 hist(rowSums(fungi.asv))
